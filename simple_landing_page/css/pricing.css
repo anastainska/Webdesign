@@ -1,0 +1,54 @@
+.pricing__option {
+    display: inline-block;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 210px;
+}
+
+.pricing__title {
+font-weight: 500;
+font-size: 36px;
+line-height: 48px;
+color: #091133;
+}
+
+.pricing__paragrapth {
+font-size: 16px;
+line-height: 26px;
+color: #6F7CB2;
+width: 730px;
+}
+
+.pricing__price {
+    padding-top: 80px;
+    font-weight: 500;
+    font-size: 36px;
+    line-height: 48px;
+    color: #37447E;
+}
+
+.pricing__label {
+font-weight: 500;
+font-size: 22px;
+line-height: 32px;
+color: #091133;
+}
+
+.pricing__text {
+font-size: 14px;
+line-height: 24px;
+color: #5D6970;
+width: 350px;
+}
+
+
+.pricing__button {
+    background: #111B47;
+    border-radius: 2px;
+    color: #FFFFFF;
+    font-size: 12px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    border: 0;
+    width: 189px;
+}

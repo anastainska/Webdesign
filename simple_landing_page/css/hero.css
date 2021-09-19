@@ -7,17 +7,16 @@
     padding-top: 138px;
 }
 
-.hero__title
-{
-font-weight: 500;
-font-size: 36px;
-line-height: 48px;
-color: #091133;
+.hero__title {
+    font-weight: 500;
+    font-size: 36px;
+    line-height: 48px;
+    color: #091133;
 }
 
 .hero__paragraph {
-font-size: 16px;
-line-height: 26px;
+    font-size: 16px;
+    line-height: 26px;
 }
 
 .hero__titles {
@@ -41,7 +40,7 @@ line-height: 26px;
 
 .hero__miniparagrapth {
     font-size: 12px;
-line-height: 18px;
-color: #5D6970;
-margin-right: 30px;
+    line-height: 18px;
+    color: #5D6970;
+    margin-right: 30px;
 }

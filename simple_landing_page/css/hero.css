@@ -1,0 +1,46 @@
+.hero {
+    padding-top: 0;
+}
+
+.hero__inner {
+    width: 540px;
+    padding-top: 138px;
+}
+
+.hero__title {
+    font-weight: 500;
+    font-size: 36px;
+    line-height: 48px;
+    color: #091133;
+}
+
+.hero__paragraph {
+    font-size: 16px;
+    line-height: 26px;
+}
+
+.hero__titles {
+    padding-top: 14px;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 26px;
+    color: #091133;
+    display: inline;
+}
+
+.hero__image {
+    position: absolute;
+    right: 0;
+}
+
+.hero__bottom {
+    display: flex;
+    padding-top: 80px;
+}
+
+.hero__miniparagrapth {
+    font-size: 12px;
+    line-height: 18px;
+    color: #5D6970;
+    margin-right: 30px;
+}

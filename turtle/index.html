@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Turtles</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+  <div class="container">
+    <header>
+      <div class="header">
+        <div class="header__name">My Turtles</div>
+        <div class="search">
+          <input class="search__input" id="search__input" type="text" placeholder="Enter a turtle you want to weight" />
+          <button class="search__button" id="search__button" type="button">Search</button>
+          <button class="clear search__button" id="clear__search__button" type="button">Cancel</button>
+        </div>
+      </div>
+    </header>
+  </div>
+
+  <div class="content">
+    <aside class="aside">
+      <h2>Manage turtles</h2>
+      <div class="sort">
+        Sort by the weight
+        <input type="checkbox" id="sort__checkbox">
+        </label>
+      </div>
+
+      <hr>
+
+      <div class="count">
+        <div>Total weight of all your turtles</div>
+        <button class="count__button" id="count__button" type="button">Count</button>
+        <div>
+          Total weight: <span id="total-weight">0</span> kilos.
+        </div>
+      </div>
+    </aside>
+
+    <div class="vertical__divider"></div>
+
+    <div>
+      <ul id="container__items"></ul>
+    </div>
+  </div>
+
+  <script type="module" src="./js/index.js"></script>
+</body>
+
+</html>

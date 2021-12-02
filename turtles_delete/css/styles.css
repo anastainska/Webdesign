@@ -1,0 +1,148 @@
+body {
+    width: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 500;
+}
+
+.container {
+    margin: 0 auto;
+    min-height: 300px;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    min-height: 2rem; 
+    background-color: #541168e7;
+    padding: 1rem;
+    border-radius: 16px;
+    border: 2px solid rgba(0, 0, 0, 0.548);
+
+}
+
+.header__name {
+    font-size: 36px;
+    font-weight: 700;
+}
+
+a {
+    text-decoration: none;
+}
+
+.search input {
+    border-radius: 6px;
+    padding: 10px;
+    width: 15rem;
+}
+
+.search button {
+    background-color: transparent;
+    border-radius: 6px;
+    border: 1px solid rgb(10, 121, 47);
+    color: black;
+    background-color: rgb(10, 121, 47);
+    width: 5rem;
+    height: 2.5rem;
+}
+
+.search button.clear {
+    color: black;
+    border-color: #e7312a;
+    background: #e7312a;
+}
+
+.content {
+    display: flex;
+    flex-direction: row;
+}
+
+.card__image {
+    width: 420px;
+}
+
+.aside {
+    background-color: white;
+    min-width: 15rem;
+    padding: 1rem;
+}
+
+.content h2 {
+    font-weight: 500;
+    color: black; 
+}
+
+  .content .count > * {
+    margin-bottom: 1rem;
+}
+
+.count_btn {
+    background-color: #0275D8;
+    color: #fff;
+    min-width: 15rem;
+    height: 2.5rem;
+    font-weight: bold;
+    border-radius: 6px;
+    border: 1px solid transparent;
+}
+
+.default_button{
+    background-color: #0275D8;
+    color: #fff;
+    min-width: 5rem;
+    height: 2.5rem;
+    font-weight: bold;
+    border-radius: 6px;
+    border: 1px solid transparent;
+}
+
+.vertical__line {
+    margin: 1rem;
+    border-left: 2px solid #BaBABA;
+    min-height: 500px;
+}
+
+ul {
+    flex-direction: row;
+    flex-wrap: wrap;
+    list-style-type: none;
+    display: flex;
+}
+
+ul li {
+    margin: 1rem;
+    padding: 1rem;
+    border-radius: 16px;
+    border: 2px solid #BBBB;
+    background-color: violet;
+}
+
+.item-card {
+    max-width: 100px;
+}
+
+.item-container__image {
+    min-height: 200px;
+    max-width: 400px;
+    cursor: pointer;
+    border-radius: 16px;
+} 
+
+.form-field{
+    margin: 1rem 0;
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+.form-field input {
+    margin-left: 1rem;
+    border-radius: 6px;
+    padding: 5px;
+    width: 10rem;
+    border-style: solid;
+} 
+
+.delete_button{
+	width: 90px;
+}

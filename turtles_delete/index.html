@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My turtles</title>
+
+    <link rel="stylesheet" href="./css/styles.css" />
+
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <div class="header">
+                <div class="header_name">My turtles</div>
+                <div class="search">
+                    <input class="search_input" id="search_input" type="text" placeholder="Type something..." />
+                    <button class="search_btn" id="search_btn" type="button">Search</button>
+                    <button class="clear search_btn" id="clear_search_btn" type="button">Clear</button>
+                </div>
+            </div>
+        </header>
+        <div class="content">
+            <aside class="aside">
+
+                <form id="add_form">
+                    <h2>Create turtle</h2>
+
+                    <div class="form-field">
+                        <label for="name_input" class="form-label">Name</label>
+                        <input type="text" class="form-control" id="name_input" required />
+                    </div>
+
+                    <div class="form-field">
+                        <label for="description_input" class="form-label">Description</label>
+                        <input type="text" class="form-control" id="description_input" required />
+                    </div>
+
+                    <div class="form-field">
+                        <label for="weight_input" class="form-label">Weight</label>
+                        <input type="number" class="form-control" id="weight_input" required />
+                    </div>
+
+                    <div class="form-field">
+                        <label for="speed_input" class="form-label">Speed</label>
+                        <input type="number" class="form-control" id="speed_input" required />
+                    </div>
+
+                    <div class="form-field">
+                        <label for="age_input" class="form-label">Age</label>
+                        <input type="number" class="form-control" id="age_input" required />
+                    </div>
+
+    
+
+
+                    <button id="submit_button" type="submit" class="default_button">
+                        Submit
+                    </button>
+                </form>
+
+                <h2>Manage turtles</h2>
+                <div class="sort">
+                    Sort by age
+                    <input type="checkbox" id="sort_checkbox">
+                    </label>
+                </div>
+                <hr>
+                <div class="count">
+                    <div>Count total weight of your turtles:</div>
+                    <button class="count_btn" id="count_btn" type="button">Count</button>
+                    <div>Total weight: <span id="total-weight">0</span> kg.</div>
+                </div>
+            </aside>
+            <div class="vertical-line"></div>
+            <div>
+                <ul id="cards_container">
+                </ul>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous">
+        </script>
+    <script type="module" src="./js/index.js"></script>
+</body>
+
+</html>

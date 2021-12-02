@@ -1,5 +1,4 @@
 export const EDIT_BUTTON_PREFIX = 'edit-button-';
-export const DELETE_BUTTON_PREFIX = "delete-button-";
 const nameInput = document.getElementById("name_input");
 const descriptionInput = document.getElementById("description_input");
 const speedInput = document.getElementById("speed_input");
@@ -22,16 +21,13 @@ const cardTemplate = ({ id, name, description, speed, weight, age }) => `
     <p>${speed}</p>
     <p>Weight: ${weight} kg.</p>
     <p>Age: ${age} years.</p>
-    <button id="${DELETE_BUTTON_PREFIX}${id}" type="button" class="default_button">
-    Delete
-    </button>
     <button id="${EDIT_BUTTON_PREFIX}${id}"type="button" class="default_button">
       Edit
     </button>
   </div>
 </li>`;
 
-export const addCardToPage = ({ id, name, description, speed, weight, age }, onEditItem, onDeleteItem) => {
+export const addCardToPage = ({ id, name, description, speed, weight, age }, onEditItem) => {
   cardsContainer.insertAdjacentHTML(
     "afterbegin",
     cardTemplate({ id, name, description, speed, weight, age})
@@ -39,17 +35,14 @@ export const addCardToPage = ({ id, name, description, speed, weight, age }, onE
 
   const editButton = document.getElementById(`${EDIT_BUTTON_PREFIX}${id}`);
   editButton.addEventListener("click", onEditItem);
-
-  const deleteButton = document.getElementById(`${DELETE_BUTTON_PREFIX}${id}`);
-  deleteButton.addEventListener("click", onDeleteItem);
 };
 
-export const renderCardsList = (cards, onEditItem, onDeleteItem) => {
+export const renderCardsList = (cards, onEditItem) => {
   cardsContainer.innerHTML = "";
   // for (const card of cards) {
   //   addCardToPage(cards, onEditItem, onDeleteItem);
   // }
-  cards.map((card) => addCardToPage(card, onEditItem, onDeleteItem));
+  cards.map((card) => addCardToPage(card, onEditItem));
 };
 
 export const getInputValues = () => {

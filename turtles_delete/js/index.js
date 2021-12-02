@@ -1,12 +1,11 @@
-import { getAllTurtles, postTurtle, editTurtle, deleteTurtle } from "./api.js";
+
 import {
     getInputValues,
     renderCardsList,
     EDIT_BUTTON_PREFIX,
-    DELETE_BUTTON_PREFIX,
     clearInputs
 } from "./dom_util.js"
-// import { getTurtles, postTurtle, updateTurtle } from "./turtles.js";
+import { getTurtles,updateTurtle, pushTurtle } from "./turtles.js";
 
 const formFields = document.getElementsByClassName("form-control");
 const submitButton = document.getElementById("submit_button");
@@ -25,29 +24,22 @@ const onEditItem = async (element) => {
     const itemId = element.target.id.replace(EDIT_BUTTON_PREFIX, "");
 
     const { name, description, speed, weight, age} = getInputValues();
-    // await updateTurtle(itemId, { name, description, speed, weight, age, len })
+    await updateTurtle(itemId, { name, description, speed, weight, age })
 
     clearInputs();
 
-    editTurtle(itemId, {
+    updateTurtle(itemId, {
         name, description, speed, weight, age
-    }).then(refetchallTurtles)
+    })
 
-    // refetchallTurtles();
-};
-
-const onDeleteItem = (element) => {
-	const id = element.target.id.replace(DELETE_BUTTON_PREFIX, "");
-	deleteTurtle(id).then(refetchallTurtles);
+    refetchallTurtles();
 };
 
 
 const refetchallTurtles = async () => {
-    const allTurtles = await getAllTurtles();
+    const allTurtles = await getTurtles();
     turtles = allTurtles;
-    console.log("refetchallTurtles func")
-    console.log(allTurtles)
-    renderCardsList(allTurtles, onEditItem, onDeleteItem);
+    renderCardsList(allTurtles, onEditItem);
 };
 
 
@@ -69,16 +61,17 @@ submitButton.addEventListener("click", (event) => {
     event.preventDefault();
 
     let { name, description, speed, weight, age } = getInputValues();
-    let id = parseInt((getAllTurtles().length) + 1);
+    let id = parseInt((getTurtles().length) + 1);
 
-    postTurtle({
+    pushTurtle({
         id,
         name,
         description,
         speed,
         weight,
         age 
-    }).then(refetchallTurtles);
+    });
+    refetchallTurtles();
 
     clearInputs();
 });
@@ -88,22 +81,21 @@ searchButton.addEventListener("click", () => {
     console.log(turtles)
     const foundTurtles = turtles.filter(turtle => turtle.name.search(searchInput.value) !== -1);
     console.log(foundTurtles)
-    renderCardsList(foundTurtles, onEditItem, onDeleteItem);
+    renderCardsList(foundTurtles, onEditItem);
 
 });
 
 clearSearchButton.addEventListener("click", () => {
-    renderCardsList(turtles, onEditItem, onDeleteItem);
+    renderCardsList(turtles, onEditItem);
     searchInput.value = "";
 });
 
-sortCheckbox.addEventListener("change", function (e) {
-    if (this.checked) {
-        const sortedTurtles = turtles.sort(
-            (card1, card2) => parseInt(card1.age) - parseInt(card2.age));
-        renderCardsList(sortedTurtles, onEditItem);
-    }
-    else {
+sortCheckbox.addEventListener("change", () => {
+    if (sortCheckbox.checked) {
+        const sortedTurtles = getTurtles().slice().sort(
+            (a, b) => parseInt(a.age) - parseInt(b.age));
+        renderCardsList(sortedTurtles);
+    } else {
         refetchallTurtles();
     }
 });

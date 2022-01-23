@@ -5,6 +5,7 @@
 
 .heading {
     display: flex;
+    font-family: sans-serif;
 }
 
 .heading__image {
@@ -72,4 +73,5 @@
     background-color: rgb(175, 175, 175);
     border-style: none;
     cursor: pointer;
+    margin-right: 84px;
 }

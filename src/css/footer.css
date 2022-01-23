@@ -1,5 +1,5 @@
 footer {
-    background-color: rgb(247, 247, 247);
+    background-color: gainsboro;
     width: 1200px;
     margin: 0 auto;
 }
@@ -22,10 +22,12 @@ footer h4, p{
 
 footer h4 {
     font-size: 18px;
+    font-family: cursive;
 }
 
 footer p {
     font-size: 13px;
+    font-family: monospace;
     width: 300px;
 }
 

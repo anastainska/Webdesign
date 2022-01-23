@@ -1,10 +1,10 @@
 import React from 'react'
-import item_image from "./assets/turtles_more.png"
+import turtle from "./assets/sticker_4.png"
 
 const MayLikeItem = ({ name, info}) => {
     return (
         <div className='may-like-item'>
-            <img src={item_image} alt='item'/>
+            <img src={turtle} alt='item'/>
             <h2>{name}</h2>
             <p> {info}</p>
         </div>

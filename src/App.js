@@ -1,5 +1,5 @@
 import "./App.css"
-import { HashRouter, Route } from "react-router-dom"
+import { HashRouter, Route, Routes } from "react-router-dom"
 import Header from "./components/Header"
 import Home from "./components/Home"
 import Catalog from "./components/Catalog"
@@ -22,14 +22,14 @@ const App = () => {
         <HashRouter>
             <div className='container'>
                 <Header />
-                <div>
-                    <Route exact path='/' component={Home}></Route>
-                    <Route path='/catalog' render={props => <Catalog {...props}
+                <Routes>
+                    <Route exact path='/' element={<Home/>}></Route>
+                    <Route path='/catalog' element={<Catalog
                         allItems={allItems} currentlyDisplayedItems={currentlyDisplayedItems}
                         setAllItems={setAllItems} setCurrentlyDisplayedItems={setCurrentlyDisplayedItems}
                         />}></Route>
-                    <Route path='/item/:id' render={props => <ItemPage {...props} allItems={allItems}/>}></Route>
-                </div>
+                    <Route path='/item/:id' element={ <ItemPage  allItems={allItems}/>}></Route>
+                </Routes>
                 <Footer />
             </div>
         </HashRouter>
